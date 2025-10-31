@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hanafi Amjad - Engineering Student ePortfolio</title>
+  <meta name="description" content="Professional ePortfolio showcasing academic excellence, projects, and international achievements in Applied Mathematics and Computer Science" />
+  <meta name="keywords" content="engineering, portfolio, student, mathematics, computer science, ENSEEIHT, quantitative finance" />
+  <meta name="author" content="Hanafi Amjad" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome (icons) -->
+  <script src="https://kit.fontawesome.com/7a8b6d5f0d.js" crossorigin="anonymous"></script>
+  <meta name="theme-color" content="#1e3c72">
+  <style>
+    :root{
+      --nav-height:72px;
+      --primary:#1e3c72; /* Navy Blue */
+      --secondary:#2a5298; /* Medium Blue */
+      --accent:#f4a460; /* Gold */
+      --bg:#f8f9fa;
+      --card-radius:8px;
+      --max-width:1200px;
+      --text:#333333;
+      --glass: rgba(255,255,255,0.85);
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Inter',system-ui,Segoe UI,Roboto,'Open Sans',sans-serif;color:var(--text);margin:0;background:linear-gradient(180deg,#ffffff 0%,#f8f9fa 100%);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    header{position:fixed;top:0;left:0;right:0;height:var(--nav-height);background:var(--primary);display:flex;align-items:center;z-index:60;box-shadow:0 2px 8px rgba(0,0,0,0.12)}
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 20px;width:100%}
+    .nav{display:flex;align-items:center;justify-content:space-between;width:100%}
+    .brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+    .brand h1{font-family:'Poppins',sans-serif;font-size:18px;margin:0}
+    nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0;align-items:center}
+    nav a{color:#fff;text-decoration:none;font-weight:600;padding:10px 8px;border-radius:6px}
+    nav a.active, nav a:hover{background:linear-gradient(90deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));color:var(--accent)}
+    .cta-download{background:transparent;border:1px solid rgba(255,255,255,0.12);color:#fff;padding:8px 12px;border-radius:6px;font-weight:600}
+    .hero{height:460px;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,var(--primary),#0f2a57);position:relative;margin-top:var(--nav-height)}
+    .hero .inner{max-width:1100px;padding:40px;text-align:center}
+    .hero h2{font-family:'Poppins',sans-serif;font-size:44px;margin:0 0 10px}
+    .hero p{font-size:18px;margin:0 0 20px;opacity:0.95}
+    .btn-primary{background:var(--accent);color:#fff;padding:12px 20px;border-radius:8px;display:inline-block;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(244,164,96,0.12);transition:transform .15s ease}
+    .btn-primary:hover{transform:translateY(-3px)}
+    main{padding:60px 0}
+    /* profile card */
+    .profile{max-width:800px;margin:-80px auto 40px;background:var(--glass);backdrop-filter:blur(6px);box-shadow:0 10px 30px rgba(16,24,40,0.08);border-radius:12px;padding:28px}
+    .profile h3{margin:0 0 12px;font-size:24px;color:var(--primary)}
+    .profile p{line-height:1.6}
+    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .contact-item{background:#fff;border-radius:8px;padding:14px;display:flex;align-items:center;gap:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+    .contact-item a{color:var(--primary);font-weight:600}
+    .stats{display:flex;gap:18px;margin-top:18px;justify-content:center}
+    .stat{background:#fff;padding:12px 18px;border-radius:8px;box-shadow:0 6px 18px rgba(16,24,40,0.04);text-align:center}
+    .stat h4{margin:0;color:var(--primary)}
+    /* sections */
+    section{margin:40px 0}
+    .section-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:20px}
+    .card{background:#fff;border-radius:var(--card-radius);padding:20px;box-shadow:0 8px 22px rgba(16,24,40,0.06);border-left:6px solid var(--secondary)}
+    .card .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--bg);font-weight:600}
+    .project-image{width:100%;height:200px;border-radius:6px;background:linear-gradient(135deg,#e6eefc,#f3f7ff);display:flex;align-items:center;justify-content:center;color:var(--secondary);font-weight:700}
+    /* timeline */
+    .timeline{display:flex;flex-direction:column;gap:18px}
+    .timeline .card{border-left:6px solid var(--accent)}
+    /* skills */
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .skill{background:#fff;padding:16px;border-radius:8px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+    .skill .bar{height:12px;background:#e9eef8;border-radius:999px;overflow:hidden;margin-top:10px}
+    .bar > span{display:block;height:100%;background:linear-gradient(90deg,var(--secondary),var(--primary));border-radius:999px}
+    /* footer */
+    footer{background:var(--primary);color:#fff;padding:20px 0;margin-top:40px}
+    footer .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    /* responsive & hamburger */
+    .hamburger{display:none;background:transparent;border:none;color:#fff;font-size:22px}
+    .mobile-nav{display:none}
+    @media (max-width:992px){.cards{grid-template-columns:1fr}.skills-grid{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width:768px){.hero{height:320px}.hero h2{font-size:28px}.profile{margin:-60px 16px 20px}.nav ul{display:none}.hamburger{display:block}.mobile-nav{display:block;position:absolute;top:var(--nav-height);left:0;right:0;background:var(--primary);padding:12px 20px;border-bottom:1px solid rgba(255,255,255,0.04)}
+      .mobile-nav a{display:block;padding:10px 0;color:#fff;border-bottom:1px solid rgba(255,255,255,0.03)}
+      .skills-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    /* scroll animations */
+    .fade-in{opacity:0;transform:translateY(6px);transition:opacity .6s ease,transform .6s ease}
+    .fade-in.visible{opacity:1;transform:none}
+    /* active nav style */
+    nav a.active{color:var(--accent);background:transparent}
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <div class="container nav" role="navigation" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Hanafi Amjad home">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#fff" opacity="0.06"/><path d="M6 18v-12h12v12H6z" fill="#fff" opacity="0.08"/></svg>
+        <h1>HANAFI Amjad</h1>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#competitions" class="nav-link">Competitions &amp; Mobility</a></li>
+          <li><a href="#civic" class="nav-link">Civic Engagement</a></li>
+          <li><a href="#activities" class="nav-link">Activities &amp; Skills</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;align-items:center;gap:12px">
+        <a class="cta-download" href="assets/cv2-resume-Hanafi-amjad.pdf" download aria-label="Download CV">Download CV <i class="fa fa-file-pdf-o" style="margin-left:8px"></i></a>
+        <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileNav"><i class="fa fa-bars"></i></button>
+      </div>
+    </div>
+    <div id="mobileNav" class="mobile-nav" hidden>
+      <a href="#home">Home</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#competitions">Competitions &amp; Mobility</a>
+      <a href="#civic">Civic Engagement</a>
+      <a href="#activities">Activities &amp; Skills</a>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="inner container">
+      <h2>HANAFI Amjad</h2>
+      <p>Engineering Student | Applied Mathematics &amp; Computer Science — ENSEEIHT (INP N7), Toulouse</p>
+      <a class="btn-primary" href="#projects">Explore My Portfolio</a>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="profile fade-in" role="region" aria-labelledby="welcome">
+      <h3 id="welcome">Welcome to My ePortfolio</h3>
+      <p>Hello! I'm Hanafi Amjad, an engineering student passionate about Applied Mathematics and Computer Science. Currently based in Toulouse, France, I am pursuing my studies at ENSEEIHT (INP N7) while remaining open to exciting opportunities in London, UK.
+      As an engineering student with strong foundations in probability, advanced statistics, algorithms, and computational modeling, I am dedicated to bridging theoretical knowledge with practical applications. My academic journey has been marked by excellence, from achieving top-of-class status in Mathematics during my preparatory classes to being selected for international physics competitions.
+      I am an active member of the International Association of Physics Students (IAPS) and had the honor of representing Morocco in PLANCKS 2025 in Barcelona. Currently, I am targeting a summer internship in London, specifically in quantitative finance, data science, or software engineering, where I can apply my mathematical expertise and programming skills to solve complex real-world problems.</p>
+
+      <div class="contact-grid" aria-label="Contact information">
+        <div class="contact-item">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:hanafiamjad140@gmail.com">hanafiamjad140@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+          <a href="tel:+33769493039">+33 7 69 49 30 39</a>
+        </div>
+        <div class="contact-item">
+          <i class="fa fa-linkedin" aria-hidden="true"></i>
+          <a href="https://linkedin.com/in/Hanafi-Amjad" target="_blank" rel="noopener">linkedin.com/Hanafi-Amjad</a>
+        </div>
+      </div>
+
+      <div class="stats" aria-hidden="true">
+        <div class="stat"><h4>3 Years</h4><small>Engineering study</small></div>
+        <div class="stat"><h4>4 Languages</h4><small>English, French, Arabic, Italian</small></div>
+        <div class="stat"><h4>2 Competitions</h4><small>PLANCKS &amp; Olympiad</small></div>
+        <div class="stat"><h4>2+ Years</h4><small>Tutoring experience</small></div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <section id="education" class="fade-in" aria-labelledby="edu-head">
+      <div class="section-header">
+        <div>
+          <h2 id="edu-head">Academic Journey</h2>
+          <p>Excellence through rigorous studies in Mathematics and Engineering</p>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <article class="card" role="article" aria-labelledby="masters">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <h3 id="masters">Diplôme d'Ingénieur (Master's) — ENSEEIHT (INP N7), Toulouse</h3>
+            <span class="badge">September 2025 – June 2028</span>
+          </div>
+          <p>I am currently pursuing a prestigious engineering degree at ENSEEIHT, one of France's top engineering schools. My specializations focus on Applied Mathematics &amp; Computer Science, with particular emphasis on Probability &amp; Statistics and Digital Systems. This program combines rigorous theoretical foundations with practical applications, preparing me for careers in quantitative fields.</p>
+          <ul>
+            <li>Specializations: Applied Mathematics &amp; Computer Science</li>
+            <li>Focus Areas: Probability &amp; Statistics, Digital Systems</li>
+            <li>Current Courses: Data Analysis, Imperative Programming, Advanced Probability &amp; Statistics</li>
+            <li>Location: Toulouse, France</li>
+          </ul>
+        </article>
+
+        <article class="card" role="article" aria-labelledby="prepa">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <h3 id="prepa">Classes Préparatoires — Lycée Mohammed VI d'Excellence (LM6E)</h3>
+            <span class="badge">September 2023 – June 2025</span>
+          </div>
+          <p>During my preparatory classes, I followed the highly competitive MPSI/MP track, known for its excellence in mathematics and physics. I distinguished myself by achieving the top position in my Mathematics class during the MP year, demonstrating both aptitude and dedication. This culminated in my successful admission to ENSEEIHT via the national CCINP examination.</p>
+          <ul>
+            <li>Track: MPSI/MP (Excellence)</li>
+            <li>Achievement: Top of class in Mathematics (MP)</li>
+            <li>Admission: ENSEEIHT via national CCINP exam</li>
+            <li>Exam Subjects: Mathematics, Physics, Chemistry, Engineering Sciences</li>
+          </ul>
+        </article>
+
+        <article class="card" role="article" aria-labelledby="bacc">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <h3 id="bacc">Baccalauréat — Lycée Manarat Al Firdaous</h3>
+            <span class="badge">September 2022 – June 2023</span>
+          </div>
+          <p>I completed my Baccalauréat in Sciences Mathématiques A with the highest honors (Mention Très Bien), establishing a strong foundation in mathematical and scientific disciplines that would serve as the cornerstone for my future academic pursuits.</p>
+          <ul>
+            <li>Stream: Sciences Mathématiques A</li>
+            <li>Honors: Mention Très Bien (Highest Distinction)</li>
+          </ul>
+        </article>
+
+        <article class="card" role="article" aria-labelledby="reflection">
+          <h3 id="reflection">Reflection on Learning</h3>
+          <p>Throughout my educational journey, I have consistently sought to understand not just the "what" but the "why" behind mathematical and scientific concepts. This approach has enabled me to develop strong problem-solving skills and the ability to apply theoretical knowledge to practical situations. My education has taught me the importance of precision, logical reasoning, and continuous learning—qualities that I bring to every project and challenge I encounter.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="fade-in" aria-labelledby="proj-head">
+      <div class="section-header">
+        <div>
+          <h2 id="proj-head">Technical Projects and Implementations</h2>
+          <p>Transforming theoretical knowledge into practical solutions</p>
+        </div>
+      </div>
+
+      <div class="cards" role="list">
+        <article class="card" role="listitem">
+          <div class="project-image" aria-hidden="true">Numerical Methods Toolkit</div>
+          <h3>Numerical Methods Toolkit</h3>
+          <p><strong>Technologies:</strong> Python • NumPy • Mathematics</p>
+          <p>This project includes solvers for ODEs/PDEs, root-finding algorithms, and interpolation methods. Each method was validated against classical physics problems to ensure stability and accuracy.</p>
+          <ul>
+            <li>Implementation of ODE/PDE solvers</li>
+            <li>Root-finding algorithms</li>
+            <li>Interpolation methods</li>
+            <li>Validation against physics problems</li>
+          </ul>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="project-image" aria-hidden="true">Algorithmic Problem-Solving Notebook</div>
+          <h3>Algorithmic Problem-Solving Notebook</h3>
+          <p><strong>Technologies:</strong> C++ • Python • Algorithms • Data Structures</p>
+          <p>A documented notebook of solutions for dynamic programming, graph algorithms, and number theory. Each entry includes implementation, complexity analysis, and edge-case discussion.</p>
+          <ul>
+            <li>Dynamic Programming solutions</li>
+            <li>Graph Algorithms</li>
+            <li>Number Theory problems</li>
+            <li>Complexity Analysis &amp; Documentation</li>
+          </ul>
+        </article>
+      </div>
+
+      <div style="margin-top:20px" class="card">
+        <h3>Project Methodology and Learning Outcomes</h3>
+        <p>These projects taught me software development practices, mathematical modeling, and the importance of testing and documentation. They prepared me for challenges in quantitative fields where accuracy and performance are essential.</p>
+      </div>
+    </section>
+
+    <!-- Competitions & Mobility -->
+    <section id="competitions" class="fade-in" aria-labelledby="comp-head">
+      <div class="section-header">
+        <div>
+          <h2 id="comp-head">International Academic Competitions and Recognition</h2>
+          <p>Challenging myself against the world's brightest students</p>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <article class="card" aria-labelledby="plancks">
+          <h3 id="plancks">PLANCKS 2025, Barcelona — Moroccan National Team</h3>
+          <span class="badge">2025</span>
+          <p>Selected to represent Morocco at PLANCKS 2025 in Barcelona. Qualified after placing 3rd in the Moroccan Pre-PLANCKS competition. This experience broadened my international perspective and strengthened my problem-solving skills under pressure.</p>
+          <ul>
+            <li>Achievement: National Team Selection</li>
+            <li>Pre-Competition Ranking: 3rd</li>
+            <li>Scope: International physics competition</li>
+          </ul>
+        </article>
+
+        <article class="card" aria-labelledby="olymp">
+          <h3 id="olymp">Moroccan National Physics Olympiad 2023 — Finalist</h3>
+          <span class="badge">2023</span>
+          <p>Reaching the finals validated my passion for physics and analytical abilities. Preparation required months of intensive study and creative problem solving.</p>
+        </article>
+
+        <article class="card" aria-labelledby="concours">
+          <h3 id="concours">Concours Général de Mathématiques 2023 — Participant</h3>
+          <span class="badge">2023</span>
+          <p>Participation in one of France's most prestigious mathematics competitions demonstrates my commitment to high-level mathematical problem solving.</p>
+        </article>
+
+        <article class="card">
+          <h3>International Perspective and Cultural Exchange</h3>
+          <p>These competitions have enhanced my academic skills and provided international exposure. I value adaptability, cross-cultural communication, and collaborative problem-solving.</p>
+        </article>
+
+        <article class="card">
+          <h3>Future Mobility Goals</h3>
+          <p>I am open to opportunities abroad (notably London, UK) to expand my professional and cultural horizons and apply my quantitative skills in international contexts.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Civic Engagement -->
+    <section id="civic" class="fade-in" aria-labelledby="civic-head">
+      <div class="section-header">
+        <div>
+          <h2 id="civic-head">Teaching and Community Contribution</h2>
+          <p>Education as a tool for positive social impact</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Mathematics Tutoring</h3>
+        <span class="badge">2023 – 2025</span>
+        <p>For the past two years, I have tutored mathematics at high school and CPGE levels. My approach focuses on building foundational understanding and developing mathematical intuition rather than rote techniques.</p>
+        <ul>
+          <li>Tutored high school and CPGE-level mathematics</li>
+          <li>Developed practice materials for competitive exam preparation</li>
+          <li>Implemented structured learning methodologies</li>
+        </ul>
+
+        <h4>Teaching Philosophy and Impact</h4>
+        <p>Effective teaching requires empathy, communication skills, and adaptability. Explaining concepts deepened my own understanding and helped many students succeed in competitive examinations.</p>
+
+        <h4>Community Impact and Future Goals</h4>
+        <p>I plan to continue mentoring through guest lectures, formal programs, or content creation to contribute to community educational development.</p>
+      </div>
+    </section>
+
+    <!-- Activities & Skills -->
+    <section id="activities" class="fade-in" aria-labelledby="act-head">
+      <div class="section-header">
+        <div>
+          <h2 id="act-head">Extracurricular Activities and Professional Skills</h2>
+          <p>Well-rounded development and continuous learning</p>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill">
+          <h4>International Association of Physics Students (IAPS)</h4>
+          <p>Active member of a global physics student network; enhanced international exposure and career perspective.</p>
+        </div>
+        <div class="skill">
+          <h4>Sports &amp; Physical Wellness</h4>
+          <p>Regular physical activity to maintain energy and focus. Sports taught teamwork and resilience.</p>
+        </div>
+        <div class="skill">
+          <h4>Competitive Problem Solving</h4>
+          <p>Participation in online programming contests and mathematics competitions to sharpen analytical skills.</p>
+        </div>
+        <div class="skill">
+          <h4>Physics &amp; Quantitative Finance</h4>
+          <p>Interest in algorithmic trading and quantitative finance; self-study of financial mathematics and modeling.</p>
+        </div>
+        <div class="skill">
+          <h4>Continuous Language Learning</h4>
+          <p>Learning Italian in addition to French, English, and Arabic.</p>
+        </div>
+        <div class="skill">
+          <h4>Integration with Career Goals</h4>
+          <p>Activities reinforce leadership, communication, and technical strengths needed for quantitative careers.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:18px" class="card">
+        <h3>Technical &amp; Programming Skills</h3>
+        <p>Programming Languages</p>
+        <div style="margin-top:10px">
+          <div style="display:flex;justify-content:space-between;align-items:center"><strong>Python</strong><small>90%</small></div>
+          <div class="bar"><span style="width:90%"></span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><strong>C++</strong><small>85%</small></div>
+          <div class="bar"><span style="width:85%"></span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><strong>JavaScript</strong><small>75%</small></div>
+          <div class="bar"><span style="width:75%"></span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><strong>Ada</strong><small>70%</small></div>
+          <div class="bar"><span style="width:70%"></span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><strong>Bash</strong><small>70%</small></div>
+          <div class="bar"><span style="width:70%"></span></div>
+        </div>
+
+        <h4 style="margin-top:16px">Quantitative &amp; Mathematical Skills</h4>
+        <ul>
+          <li>Probability Theory</li>
+          <li>Advanced Statistics</li>
+          <li>Optimization</li>
+          <li>Numerical Methods</li>
+          <li>Algorithms and Data Structures</li>
+          <li>Machine Learning Fundamentals</li>
+        </ul>
+
+        <h4 style="margin-top:12px">Software &amp; Tools</h4>
+        <p>Git • Linux • LaTeX • NumPy • Pandas • Jupyter</p>
+
+        <h4 style="margin-top:12px">Languages</h4>
+        <p>French (Native) • English (Fluent) • Arabic (Fluent) • Italian (Intermediate)</p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot-inner">
+      <div>© 2025 Hanafi Amjad</div>
+      <div>
+        <a href="#home" style="color:#fff;margin-right:12px">Home</a>
+        <a href="https://linkedin.com/in/Hanafi-Amjad" target="_blank" rel="noopener" style="color:#fff;margin-right:12px">LinkedIn</a>
+        <a href="mailto:hanafiamjad140@gmail.com" style="color:#fff">Email</a>
+      </div>
+      <div>Last updated: October 31, 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll and active nav
+    const links = document.querySelectorAll('a.nav-link, .mobile-nav a, .brand');
+    const navLinks = document.querySelectorAll('nav ul li a');
+    links.forEach(l => {
+      l.addEventListener('click', e => {
+        if(!l.hash) return;
+        e.preventDefault();
+        const target = document.querySelector(l.getAttribute('href'));
+        if(target){
+          window.scrollTo({top: target.offsetTop - parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) - 8, behavior:'smooth'});
+        }
+        // close mobile nav if open
+        const mobile = document.getElementById('mobileNav');
+        if(mobile && !mobile.hidden){ mobile.hidden = true; document.getElementById('hamburger').setAttribute('aria-expanded','false'); }
+      })
+    })
+
+    // Active nav on scroll
+    const sections = document.querySelectorAll('main section, .hero');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        const link = document.querySelector('nav a[href="#'+id+'"]');
+        if(entry.isIntersecting){
+          document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+          if(link) link.classList.add('active');
+        }
+      })
+    },{root:null,rootMargin:'-35% 0px -45% 0px',threshold:0});
+    sections.forEach(s => observer.observe(s));
+
+    // Hamburger toggle
+    const hamb = document.getElementById('hamburger');
+    hamb.addEventListener('click', () => {
+      const mobile = document.getElementById('mobileNav');
+      const expanded = hamb.getAttribute('aria-expanded') === 'true';
+      hamb.setAttribute('aria-expanded', String(!expanded));
+      if(mobile){ mobile.hidden = expanded; }
+    });
+
+    // Reveal on scroll (fade-in)
+    const faders = document.querySelectorAll('.fade-in');
+    const fObs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); })
+    },{threshold:0.12});
+    faders.forEach(f=>fObs.observe(f));
+
+    // Accessibility: focus outlines for keyboard users
+    document.body.addEventListener('keyup',(e)=>{ if(e.key === 'Tab') document.documentElement.classList.add('show-focus'); });
+  </script>
+
+  <!-- README (project structure & deployment notes)
+
+  FILE: index.html (this file) contains all markup, styles and scripts for the static ePortfolio.
+
+  SUGGESTED PROJECT STRUCTURE (create these files in the repository):
+  portfolio/
+  ├── index.html  <-- this file
+  ├── assets/
+  │   ├── icons/    (optional svg icons)
+  │   ├── images/   (project screenshots and hero image if desired)
+  │   └── cv2-resume-Hanafi-amjad.pdf  (place your CV here)
+  ├── README.md    (deployment instructions)
+  └── manifest.json (optional PWA metadata)
+
+  DEPLOYMENT: This site is fully static and can be deployed to GitHub Pages, Netlify, or Vercel. Push the project folder to a Git repository and follow the host's static site instructions. Ensure assets/ contains the CV file referenced in the Download button.
+
+  ACCESSIBILITY: The site uses semantic HTML, aria labels and sufficient contrast for primary elements. Verify with aXe or Lighthouse and tweak contrast if needed.
+
+  NOTES & NEXT STEPS:
+  - Replace placeholder project images under assets/images and adjust project-image backgrounds.
+  - Add the real cv2-resume-Hanafi-amjad.pdf file inside assets/.
+  - For improved performance, separate CSS/JS into dedicated files and minify before deployment.
+
+  -->
+</body>
+</html>
